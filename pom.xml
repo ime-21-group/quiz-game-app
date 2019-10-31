@@ -19,16 +19,6 @@
 	</properties>
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter</artifactId>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<scope>test</scope>
-		</dependency>
 		
 		<!-- ..................... -->
 		<!-- ..... HIBERNATE ..... -->
@@ -40,6 +30,12 @@
 		    <artifactId>hibernate-core</artifactId>
 		    <version>5.4.4.Final</version>
 		</dependency>
+		<dependency>
+		    <groupId>mysql</groupId>
+		    <artifactId>mysql-connector-java</artifactId>
+		    <version>8.0.18</version>
+		</dependency>
+		
 		
 	</dependencies>
 

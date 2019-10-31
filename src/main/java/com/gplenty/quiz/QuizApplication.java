@@ -1,13 +1,27 @@
 package com.gplenty.quiz;
 
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
+import java.io.PrintWriter;
+import java.net.ServerSocket;
+import java.net.Socket;
 
-@SpringBootApplication
 public class QuizApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(QuizApplication.class, args);
+		try {
+			ServerSocket socket = new ServerSocket(59090);
+			while(true)
+			{
+				Socket newSocket = socket.accept();
+				PrintWriter out = new PrintWriter(newSocket.getOutputStream());
+				out.println("Hello");
+				out.flush();
+				out.close();
+				newSocket.close();
+			}
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
