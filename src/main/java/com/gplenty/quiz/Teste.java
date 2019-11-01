@@ -9,7 +9,7 @@ public class Teste {
 	
 	public static void main (String[] args) {
 		
-		EntityManagerFactory factory = Persistence.createEntityManagerFactory(PostgreSQLPersistence); 
+		EntityManagerFactory factory = Persistence.createEntityManagerFactory("PostgreSQLPersistence"); 
 		
 		EntityManager manager = factory.createEntityManager();
 		

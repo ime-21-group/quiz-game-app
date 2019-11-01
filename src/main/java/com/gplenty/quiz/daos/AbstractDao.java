@@ -1,4 +1,4 @@
-package com.gplenty.quiz;
+package com.gplenty.quiz.daos;
 
 import java.util.List;
 

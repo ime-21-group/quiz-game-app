@@ -1,4 +1,4 @@
-package com.gplenty.quiz;
+package com.gplenty.quiz.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
