@@ -25,17 +25,17 @@ public class Answered_Quiz {
 	private Quiz quiz;
 	
 	@ManyToOne
-	@JoinColumn(name="student_id")
-	private Student student;
+	@JoinColumn(name="id")
+	private User user;
 	
 	private Float grade;
 
 	//
 	// Métodos
 	//
-	public Answered_Quiz(Quiz quiz, Student student, Float grade) {
+	public Answered_Quiz(Quiz quiz, User user, Float grade) {
 		this.quiz = quiz;
-		this.student = student;
+		this.user = user;
 		this.grade = grade;
 	}
 
@@ -58,12 +58,12 @@ public class Answered_Quiz {
 		this.quiz = quiz;
 	}
 
-	public Student getStudent() {
-		return student;
+	public User getStudent() {
+		return user;
 	}
 
-	public void setStudent(Student student) {
-		this.student = student;
+	public void setUser(User user) {
+		this.user = user;
 	}
 
 	public Float getGrade() {

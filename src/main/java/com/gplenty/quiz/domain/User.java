@@ -6,22 +6,24 @@ import javax.persistence.Id;
 
 
 	@Entity
-	public class Student {
+	public class User {
 			
 			@Id
 			@GeneratedValue
-			private int student_id;
+			private int id;
 			
 			private String username;
 			
-			private String Spassword;
+			private String passwd;
+			
+			private int type;
 			
 			public int getId() {
-				return student_id;
+				return id;
 			}
 			
 			public void setId(int id) {
-				student_id = id;
+				this.id = id;
 			}
 			
 			public String getuser() {
@@ -33,20 +35,26 @@ import javax.persistence.Id;
 			}
 			
 			public String getpass() {
-				return Spassword;
+				return passwd;
 			}
 			
 			public void setpass(String pass) {
-				Spassword = pass;
+				passwd = pass;
 			}
 			
-			public Student(int id, String user, String pass) {
-				student_id = id;
+			public int gettype() {
+				return type;
+			}
+			
+			public void settype(int type) {
+				this.type = type;
+			}
+			
+			public User(int type, String user, String pass) {
+				this.type = type;
 				username = user;
-				Spassword = pass;
+				passwd = pass;
 			}
 			
-			public static void main (String[] args) {
-				
-			}
+			
 	}
