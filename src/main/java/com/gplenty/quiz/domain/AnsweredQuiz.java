@@ -7,10 +7,14 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+import com.gplenty.quiz.domain.users.Student;
 
 
 @Entity
-public class Answered_Quiz {
+@Table(name="Answered_Quiz")
+public class AnsweredQuiz {
 		
 	//
 	// Atributos
@@ -27,18 +31,9 @@ public class Answered_Quiz {
 	
 	@ManyToOne
 	@JoinColumn(name="student_id")
-	private User user;
+	private Student student;
 	
 	private Float grade;
-
-	//
-	// Métodos
-	//
-	public Answered_Quiz(Quiz quiz, User user, Float grade) {
-		this.quiz = quiz;
-		this.user = user;
-		this.grade = grade;
-	}
 
 	//
 	// Métodos de acesso
@@ -59,12 +54,12 @@ public class Answered_Quiz {
 		this.quiz = quiz;
 	}
 
-	public User getStudent() {
-		return user;
+	public Student getStudent() {
+		return student;
 	}
 
-	public void setUser(User user) {
-		this.user = user;
+	public void setStudent(Student user) {
+		this.student = user;
 	}
 
 	public Float getGrade() {

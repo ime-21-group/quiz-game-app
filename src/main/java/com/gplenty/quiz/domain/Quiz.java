@@ -1,5 +1,7 @@
 package com.gplenty.quiz.domain;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -7,6 +9,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 
 import com.gplenty.quiz.domain.users.Teacher;
 
@@ -21,6 +24,9 @@ public class Quiz {
 	@ManyToOne
 	@JoinColumn(name="author")
 	private Teacher author;
+	
+	@OneToMany(mappedBy="quiz")
+	private List<Question> questions;
 	
 	@Column(name="quiz_name")
 	private String quizName;
@@ -72,5 +78,11 @@ public class Quiz {
 		this.subject_matter = subject_matter;
 	}
 
-	
+	public List<Question> getQuestions() {
+		return questions;
+	}
+
+	public void setQuestions(List<Question> questions) {
+		this.questions = questions;
+	}
 }
