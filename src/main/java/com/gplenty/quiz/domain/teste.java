@@ -18,10 +18,16 @@ public class teste {
 		
 	List<User> users = ud.retrieveByUsarnameAndPassword("Gabriel", "borginhosS2");
 	
-	for(User user : users) {
-		System.out.println(user.getId() +"  "+ user.getUsername() +"  "+ user.getPasswd() +"  "+ user.getType());
-	}
+	QuizDao quizdao = new QuizDao();
+	//Quiz quiz = new Quiz();
+	//quiz = quizdao.retrieveById(3);
 	
+	List<Quiz> quizes = quizdao.retrieveByQuizName("SegundoQuiz");
+	
+	
+	for(Quiz quiz: quizes) {
+	System.out.println(quiz.getQuiz_id() +"  "+ quiz.getAuthor().getUsername() +"  "+ quiz.getQuizName() +"  "+ quiz.getSubject() +" "+ quiz.getSubject_matter());
+	}	
 
 }
 		

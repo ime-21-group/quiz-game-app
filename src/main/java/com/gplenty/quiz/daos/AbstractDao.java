@@ -30,6 +30,14 @@ public abstract class AbstractDao<Type>
 		return query.getResultList();
 	}
 	
+	public Type retrieveById(Integer id)
+	{
+		String queryString = "Select t from " + typeClass.getSimpleName() + " as t where t.id = :id";
+		Query query = em.createQuery(queryString).setParameter("id", id);
+		List<Type> result = query.getResultList();
+		return result.size() == 0 ? null : result.get(0);
+	}
+	
 	public void save(Type element)
 	{
 		em.persist(element);
