@@ -3,6 +3,7 @@ package com.gplenty.quiz.domain;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -16,8 +17,8 @@ public class Answered_Quiz {
 	//
 
 	@Id
-	@GeneratedValue
-	@Column(name="answeredQuiz_id")
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="answered_quiz_id")
 	private Integer id;
 	
 	@ManyToOne
@@ -25,7 +26,7 @@ public class Answered_Quiz {
 	private Quiz quiz;
 	
 	@ManyToOne
-	@JoinColumn(name="id")
+	@JoinColumn(name="student_id")
 	private User user;
 	
 	private Float grade;

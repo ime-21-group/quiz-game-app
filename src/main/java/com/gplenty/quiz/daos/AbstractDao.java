@@ -18,7 +18,7 @@ public abstract class AbstractDao<Type>
 	public AbstractDao(Class<Type> typeClass)
 	{
 		Type t;
-		emf = Persistence.createEntityManagerFactory("MariaDBPersistence");
+		emf = Persistence.createEntityManagerFactory("QuizPersistence");
 		em = emf.createEntityManager();
 		this.typeClass = typeClass;
 	}
