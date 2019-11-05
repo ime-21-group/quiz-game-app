@@ -11,9 +11,9 @@ import javax.persistence.Query;
 public abstract class AbstractDao<Type> 
 {
 
-	private EntityManagerFactory emf;
-	private EntityManager em;
-	private Class<Type> typeClass;
+	protected EntityManagerFactory emf;
+	protected EntityManager em;
+	protected Class<Type> typeClass;
 	
 	public AbstractDao(Class<Type> typeClass)
 	{
