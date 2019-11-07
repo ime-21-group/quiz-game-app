@@ -33,7 +33,8 @@ public class Quiz {
 	
 	private String subject;
 	
-	private String subject_matter;
+	@Column(name="subject_matter")
+	private String subjectMatter;
 
 	//
 	// Métodos de acesso
@@ -70,12 +71,12 @@ public class Quiz {
 		this.subject = subject;
 	}
 
-	public String getSubject_matter() {
-		return subject_matter;
+	public String getSubjectMatter() {
+		return subjectMatter;
 	}
 
-	public void setSubject_matter(String subject_matter) {
-		this.subject_matter = subject_matter;
+	public void setSubjectMatter(String subject_matter) {
+		this.subjectMatter = subject_matter;
 	}
 
 	public List<Question> getQuestions() {
