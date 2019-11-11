@@ -86,5 +86,5 @@ public enum ServerState
 	 * 
 	 * o sistema espera até que o professor queira voltar para sua tela inicial
 	 */
-	VIEW_QUIZ_STAT
+	VIEW_QUIZ_STATS
 }

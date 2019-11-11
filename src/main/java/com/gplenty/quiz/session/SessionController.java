@@ -6,6 +6,7 @@ import java.net.Socket;
 import java.util.Scanner;
 
 import com.gplenty.quiz.domain.User;
+import com.gplenty.quiz.session.controllers.ControllerFactory;
 
 
 	/*	Classe responsável por manter a sessão do usuário
@@ -34,17 +35,28 @@ public class SessionController implements Runnable
 		this.state = ServerState.NOT_AUTHED;
 		this.sender = new PrintWriter(this.socket.getOutputStream());
 		this.reader = new Scanner(this.socket.getInputStream());
-		// set controller
-//		this.controller = ControllerFactory.make(state, this);
 	}
 
 	
 	
 	
 	@Override
-	public void run() {
-		// TODO Auto-generated method stub
+	public void run() 
+	{
+		while(true)
+		{
+			controller = ControllerFactory.make(state);
+			
+			controller.readMessage(reader.nextLine());
+			state = controller.handleMessage();
+			sender.write(controller.getAnswer());
+		}
 		
+	}
+	
+	public User getUser()
+	{
+		return user;
 	}
 
 }
