@@ -24,6 +24,8 @@ public class Question {
 	
 	@Column(name="correct_answer")
 	private String correctAnswer;
+	
+	private Integer index;
 
 	//
 	// Métodos de acesso
@@ -58,5 +60,13 @@ public class Question {
 
 	public void setCorrectAnswer(String correctAnswer) {
 		this.correctAnswer = correctAnswer;
+	}
+
+	public Integer getIndex() {
+		return index;
+	}
+
+	public void setIndex(Integer index) {
+		this.index = index;
 	}
 }
