@@ -33,7 +33,7 @@ public class SessionController implements Runnable
 	{
 		this.socket = socket;
 		this.state = ServerState.NOT_AUTHED;
-		this.sender = new PrintWriter(this.socket.getOutputStream());
+		this.sender = new PrintWriter(this.socket.getOutputStream(), true);
 		this.reader = new Scanner(this.socket.getInputStream());
 	}
 

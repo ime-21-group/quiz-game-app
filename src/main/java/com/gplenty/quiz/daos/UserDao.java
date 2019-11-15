@@ -6,6 +6,7 @@ import javax.persistence.Query;
 
 import com.gplenty.quiz.domain.User;
 
+@SuppressWarnings("unchecked")
 public class UserDao extends AbstractDao<User>
 {
 
@@ -13,7 +14,7 @@ public class UserDao extends AbstractDao<User>
 		super(User.class);
 	}
 
-	public List<User> retrieveByUsarname(String username)
+	public List<User> retrieveByUsername(String username)
 	{
 		String queryString = "select t from User as t where t.username = :username";
 		Query query = em.createQuery(queryString).setParameter("username", username);

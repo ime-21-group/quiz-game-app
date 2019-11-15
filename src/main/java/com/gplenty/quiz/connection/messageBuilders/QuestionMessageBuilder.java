@@ -9,5 +9,6 @@ public class QuestionMessageBuilder {
 		String correctAnswer = question.getCorrectAnswer();
 		String index = question.getIndex().toString();
 		return "{index:" + index + ";header:" + header + ";correctAnswer:" + correctAnswer + "}";
+		
 	}
 }

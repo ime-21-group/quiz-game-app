@@ -3,13 +3,8 @@ package com.gplenty.quiz.session.controllers;
 import com.gplenty.quiz.session.Controller;
 import com.gplenty.quiz.session.ServerState;
 
-public class StartPageTeacherController implements Controller {
+public class StartPageTeacherController extends Controller {
 
-	@Override
-	public void readMessage(String message) {
-		// TODO Auto-generated method stub
-
-	}
 
 	@Override
 	public ServerState handleMessage() {
@@ -17,10 +12,5 @@ public class StartPageTeacherController implements Controller {
 		return null;
 	}
 
-	@Override
-	public String getAnswer() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 }

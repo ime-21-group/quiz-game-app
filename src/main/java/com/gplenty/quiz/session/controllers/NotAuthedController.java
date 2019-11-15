@@ -5,16 +5,10 @@ import com.gplenty.quiz.connection.PLENA.ActionIdentifier;
 import com.gplenty.quiz.session.Controller;
 import com.gplenty.quiz.session.ServerState;
 
-public class NotAuthedController implements Controller
+public class NotAuthedController extends Controller
 {
-	private Message receivedMessage;
-	private Message answerMessage;
+	
 
-	@Override
-	public void readMessage(String message) 
-	{
-		receivedMessage = new Message(message);
-	}
 
 	@Override
 	public ServerState handleMessage() 
@@ -37,12 +31,6 @@ public class NotAuthedController implements Controller
 		}
 		answerMessage = new Message(answerIdentifier, "");
 		return nextState;
-	}
-
-	@Override
-	public String getAnswer() 
-	{
-		return answerMessage.getAsString();
 	}
 	
 }

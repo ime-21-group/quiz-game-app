@@ -1,11 +1,22 @@
 package com.gplenty.quiz.session;
 
-public interface Controller 
-{
-	public void readMessage(String message);
+import com.gplenty.quiz.connection.Message;
+
+public abstract class Controller {
 	
-	public ServerState handleMessage();
+	protected Message receivedMessage;
+	protected Message answerMessage;
 	
-	public String getAnswer();
+	public void readMessage(String message)
+	{
+		receivedMessage = new Message(message);
+	}
 	
+	public abstract ServerState handleMessage();
+	
+	public String getAnswer()
+	{
+		return answerMessage.getAsString();
+	}
+
 }
